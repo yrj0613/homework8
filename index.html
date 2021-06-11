@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+        display: flex;
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        text-align: center;
+        line-height: 60px;
+        color: white;
+        justify-content: space-around;
+    }
+    .nav a{
+        color: white;
+        text-decoration: none;
+    }
+    .imgnav{
+        width: 15px;
+        height: 15px;
+        background: url(./images/3.png);
+        background-position: -230px -26px;
+    }
+    .nav div:nth-child(1){
+        width: 106px;
+        flex-shrink: 1;
+    }
+    .nav div:nth-child(2),.nav div:nth-child(3),.nav div:nth-child(4),.nav div:nth-child(13),.nav div:nth-child(15){
+        flex-shrink: 1;
+        width: 50px;
+    }
+    .nav div:nth-child(5){
+        flex-shrink: 1;
+        width: 120px;
+    }
+    .nav div:nth-child(6),.nav div:nth-child(8),.nav div:nth-child(10),.nav div:nth-child(12){
+        flex-shrink: 1;
+        width: 15px;
+        margin: auto 0;
+    }
+    .nav div:nth-child(7){
+        flex-shrink: 1;
+        width: 60px;
+    }
+    .nav div:nth-child(9),.nav div:nth-child(11),.nav div:nth-child(14){
+        flex-shrink: 1;
+        width: 70px;
+    }
+    .nav div:nth-child(16){
+        flex-shrink: 1;
+        width: 20px;
+    }
+    .nav div:nth-child(17){
+        flex-shrink: 1;
+        width: 180px;
+        height: 30px;
+        margin-top: 20px;
+        position: relative;
+    }
+    .zhao{
+        font-size: 10px;
+        color: gray;
+        height: 20px;
+        position: absolute;
+        top: -11px;
+        left: -15px;
+    }
+    .main{
+        width: 100%;
+        height: 600px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .ci{
+        width: 600px;
+        height: 600px;
+        margin-left: 100px;
+    }
+    .xi{
+        width: 600px;
+        height: 30px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .xin{
+        width: 400px;
+        height: 40px;
+        margin-left: 100px;
+        text-align: center;
+        line-height: 40px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .xin a{
+        color: orange;
+        text-decoration: none;
+    }
+    .xin div:nth-child(1),.xin div:nth-child(2){
+        font-size: 15px;
+    }
+    .xin div:nth-child(3){
+        width: 30px;
+        font-size: 10px;
+    }
+    .xin div:nth-child(4){
+        width: 14px;
+        height: 14px;
+        margin: auto 0;
+    }
+    .xin2{
+        width: 300px;
+        height: 30px;
+        font-size: 15px;
+        margin-left: 150px;
+    }
+    .lyric{
+        width: 400px;
+        height: 500px;
+        margin-left: 100px;
+        position: absolute;
+        overflow-y: hidden;
+    }
+    @keyframes anim{
+        0% {
+            top: 0px;
+            opacity: 0.8
+        }
+        10% {
+            top: -100px;
+            opacity: 1
+        }
+        15% {
+            top: -200px;
+            opacity: 1
+        }
+        20% {
+            top: -400px;
+            opacity: 1
+        }
+        25% {
+            top: -600px;
+            opacity: 1
+        }
+        30% {
+            top: -800px;
+            opacity: 1
+        }
+        35% {
+            top: -1000px;
+            opacity: 1
+        }
+        40% {
+            top: -1200px;
+            opacity: 1
+        }
+        45% {
+            top: -1400px;
+            opacity: 1
+        }
+        50% {
+            top: -1600px;
+            opacity: 1
+        }
+        55% {
+            top: -1800px;
+            opacity: 1
+        }
+        60% {
+            top: -2000px;
+            opacity: 1
+        }
+        65% {
+            top: -2200px;
+            opacity: 1
+        }
+        70% {
+            top: -2400px;
+            opacity: 1
+        }
+        75% {
+            top: -2600px;
+            opacity: 1
+        }
+        80% {
+            top: -2800px;
+            opacity: 1
+        }
+        85% {
+            top: -3000px;
+            opacity: 1
+        }
+        90% {
+            top: -3200px;
+            opacity: 1
+        }
+        95% {
+            top: -3400px;
+            opacity: 0.8
+        }
+        100%{
+            top: -3600px;
+            opacity: 0.4
+        }
+    }
+    .lyric p{
+        position: relative;
+        height: 25px;
+        margin: auto;
+        text-align: center;
+    }
+    .lyric1{
+        width: 400px;
+        height: 500px;
+        margin-left: 100px;
+        position: absolute;
+        overflow-y: hidden;
+    }
+    .lyric1 p{
+        position: relative;
+        height: 25px;
+        margin: auto;
+        text-align: center;
+        animation: anim 400s linear infinite;
+    }
+    .con{
+        width: 50%;
+        height: 600px;
+        margin-left: 100px;
+    }
+    @keyframes anim1{
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .rot{
+        background-image: url(./images/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        border-radius: 50%;
+        margin-left: 50px;
+        border: 1.5px solid gray;
+        animation-name: anim1;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    .cen{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        border-radius: 50%;
+        background-color: white;
+        border: 1px solid gray;
+        opacity: 0.5;
+    }
+    .cen1{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 137.5px;
+        left: 137.5px;
+        border-radius: 50%;
+        background-color: white;
+        border: 1px solid gray;
+        opacity: 1;
+    }
+    .player{
+        width: 100%;
+        height: 60px;
+        display: flex;
+    }
+    .player .play{
+        width: 40px;
+        height: 40px;
+        margin-right: 6px;
+        background-image: url(./images/7.jpg);
+        background-position: -110px 0;
+    }
+    .player .zan{
+        width: 40px;
+        height: 40px;
+        margin-right: 6px;
+        background-image: url(./images/7.jpg);
+        background-position: -206px 0;
+    }
+    .player .play:hover{
+        background-position: -162px 0;
+    }
+    .player .zan:hover{
+        background-position: -206px -48px;
+    }
+    .bar{
+        position: relative;
+        width: 300px;
+        height: 4px;
+        border-radius: 30px;
+        margin: 15px 0;
+        background-color: gray;
+    }
+    .process{
+        width: 0px;
+        height: 4px;
+    }
+    .bat{
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-image: url(./images/3.png);
+        background-position: 0 -128px;
+        top: -3px;
+    }
+    .playtime{
+        width: 40px;
+        height: 20px;
+        font-size: 10px;
+        text-align: center;
+        line-height: 20px;
+        color: gray;
+    }
+    .sound{
+        width: 25px;
+        height: 17px;
+        background-image: url(./images/7.jpg);
+        background-position: -43px 0;
+        margin-top: 10px;
+    }
+    .sound:hover{
+        width: 25px;
+        height: 17px;
+        background-image: url(./images/7.jpg);
+        background-position: -69px 0;
+        margin-top: 10px;
+    }
+    .xia{
+        width: 200px;
+        height: 40px;
+        position: relative;
+        margin-left: 100px;
+        background-image: url(./images/7.jpg);
+        background-position: 0 -48px;
+    }
+    .xia1{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        background-image: url(./images/7.jpg);
+        top: 10px;
+        left: 30px;
+    }
+    .xia p{
+        font-size: 15px;
+        position: absolute;
+        top: -5px;
+        left: 50px;
+    }
+    .dan{
+        width: 250px;
+        height: 60px;
+        margin-left: 50px;
+        margin-top: 50px;
+        display: flex;
+    }
+    .xren{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-image: url(./images/1.jpg);
+    }
+    .kuang{
+        width: 200px;
+        height: 60px;
+        background-image: url(./images/9.jpg);
+        background-position: 0 -567px;
+    }
+    .xxx{
+        width: 100%;
+        height: 30px;
+        margin-left: 20px;
+        margin-top: 5px;
+        font-size: 10px;
+        color: gray;
+    }
+    .zui{
+        width: 100%;
+        height: 20px;
+        margin-left: 20px;
+        font-size: 10px;
+        display: flex;
+    }
+    .ou{
+        width: 16px;
+        height: 11px;
+        margin-top: 5px;
+        background-image: url(./images/7.jpg);
+        background-position: -43px -25px;
+    }
+    .ai{
+        width: 100px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 10px;
+        color: gray;
+        float: left;
+    }
+    .qu{
+        width: 60px;
+        height: 30px;
+        float: right;
+        text-decoration: none;
+        font-size: 10px;
+    }
+    .ping{
+        width: 600px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .tou{
+        width: 100%;
+        height: 30px;
+        display: flex;
+    }
+    .nei{
+        width: 40px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .nei1{
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 20px;
+    }
+    .lun{
+        width: 100%;
+        height: 300px;
+        display: flex;
+    }
+    .ren{
+        width: 50px;
+        height: 50px;
+        background-image: url(./images/1.jpg);
+        background-size: contain;
+    }
+    .write{
+        width: 500px;
+        height: 300px;
+        margin-left: 30px;
+    }
+    .text{
+        width: 500px;
+        height: 100px;
+    }
+    .write1{
+        width: 500px;
+        height: 100px;
+        border: 1.5px solid gray;
+        font-size: 10px;
+        color: gray;
+    }
+    .ti{
+        width: 500px;
+        height: 30px;
+        display: flex;
+        margin-top: 10px;
+        margin-left: 350px;
+    }
+    .zi{
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .an{
+        width: 60px;
+        height: 30px;
+        background-color: orange;
+        border: 1px solid orange;
+        border-radius: 10px;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+    }
+    .jing{
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+    }
+    .jingzi{
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .jingp{
+        width: 600px;
+        height: 300px;
+        /* display: flex; */
+    }
+    .ptou{
+        width: 50px;
+        height: 50px;
+        background-image: url(./images/6.jpg);
+        background-size: contain;
+    }
+    .zong{
+        width: 600px;
+        height: 70px;
+        display: flex;
+    }
+    .ju{
+        width: 520px;
+        height: 70px;
+        margin-left: 20px;
+    }
+    .ming{
+        width: 100%;
+        height: 15px;
+        font-size: 10px;
+        display: flex;
+    }
+    .ming1{
+        width: 500px;
+        height: 15px;
+        color: orange;
+        float: left;
+    }
+    .fen{
+        width: 30px;
+        height: 15px;
+        float: right;
+    }
+    .a{
+        color: black;
+        text-decoration: none;
+    }
+    .pingn{
+        width: 100%;
+        height: 30px;
+        font-size: 10px;
+    }
+    .time{
+        width: 100%;
+        height: 20px;
+        font-size: 5px;
+    }
+    .ye{
+        width: 210px;
+        height: 30px;
+        margin: 0 auto;
+        display: flex;
+    }
+    .ye1{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: lightgrey;
+        font-size: 15px;
+        text-align: center;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    .ye1 a{
+        text-decoration: none;
+        color: gray;
+    }
+    .ye2{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: orange;
+        font-size: 15px;
+        text-align: center;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    .ye2 a{
+        text-decoration: none;
+        color: white;
+    }
+    .ye3{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 15px;
+        text-align: center;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    .ye3 a{
+        text-decoration: none;
+        color: gray;
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <img src="./images/4.jpg">
+        </div>
+        <div><a href="##">首页</a></div>
+        <div><a href="##">榜单</a></div>
+        <div><a href="##">歌手</a></div>
+        <div><a href="##">下载酷我客户端</a></div>
+        <div class="imgnav"></div>
+        <div style="font-size: 10px;">美女秀</div>
+        <div class="imgnav"></div>
+        <div style="font-size: 10px;">酷我耳机</div>
+        <div class="imgnav"></div>
+        <div style="font-size: 10px;">VIP会员</div>
+        <div class="imgnav"></div>
+        <div style="font-size: 10px;">i听</div>
+        <div><a href="##">更多服务</a></div>
+        <div><a href="##">登录</a></div>
+        <div>^</div>
+        <div style="background-image: url(./images/5.png);font-size: 10px;color: grey;background-repeat: no-repeat;">
+            <div class="zhao">找到好音乐</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="ci"><!--歌词部分-->
+            <div class="xi">喜羊羊</div>
+            <div class="xin">
+                <div>专辑：<a href="##">儿歌大全</a></div>
+                <div>歌手：<a href="##">华语群星</a></div>
+                <div>分享</div>
+                <div style="background-image: url(./images/2.jpg);"></div>
+                <div><a href="##">评论</a></div>
+            </div>
+            <div class="xin2">上传时间：2015-10-02&nbsp&nbsp&nbsp歌曲来源：网络</div>
+            <hr>
+            <div class="lyric" id="lyric">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>喜羊羊美羊羊懒羊羊沸羊羊</p>
+                <p>慢羊羊软绵绵红太狼灰太狼</p>
+                <p>别看我只是一只羊</p>
+                <p>绿草也为我变的更香</p>
+                <p>天空因为我变的更蓝</p>
+                <p>白云也为我变的柔软</p>
+                <p>别看我只是一只羊</p>
+                <p>羊儿的聪明难以想像</p>
+                <p>天再高心情一样奔放</p>
+                <p>每天都追赶太阳...</p>
+                <p>有什么难题去牵绊我都不会去心伤</p>
+                <p>有什么危险在我面前也不会去慌乱</p>
+                <p>就算有狼群把我追捕也当做游戏一场</p>
+                <p>在什么时间都爱开心笑容都会飞翔</p>
+                <p>就算会摔倒站得起来永远不会沮丧</p>
+                <p>在所有天气拥有叫人大笑的力量</p>
+                <p>虽然我只是羊… …</p>
+                <p>喜羊羊美羊羊懒羊羊沸羊羊</p>
+                <p>慢羊羊软绵绵红太狼灰太狼</p>
+                <p>别看我只是一只羊</p>
+                <p>羊儿的聪明难以想像</p>
+                <p>天再高心情一样奔放</p>
+                <p>每天都追赶太阳..</p>
+                <p>有什么难题去牵绊我都不会去心伤</p>
+                <p>有什么危险在我面前也不会去慌乱</p>
+                <p>就算有狼群把我追捕也当做游戏一场</p>
+                <p>在什么时间都爱开心笑容都会飞翔</p>
+                <p>就算会摔倒站得起来永远不会沮丧</p>
+                <p>在所有天气拥有叫人大笑的力量</p>
+                <p>虽然我只是羊… …</p>
+                <p>有什么难题去牵绊我都不会去心伤</p>
+                <p>有什么危险在我面前也不会去慌乱</p>
+                <p>就算有狼群把我追捕也当做游戏一场</p>
+                <p>在什么时间都爱开心笑容都会飞翔</p>
+                <p>就算会摔倒站得起来永远不会沮丧</p>
+                <p>在所有天气拥有叫人大笑的力量</p>
+                <p>虽然我只是羊… …</p>
+            </div>
+        </div>
+        <div class="con"><!--音乐控制器-->
+            <audio src="./music.mp3" id="music"></audio>
+            <div class="rot">
+                <div class="cen"></div>
+                <div class="cen1"></div>
+            </div>
+            <div class="player">
+                <div class="play" id="play"></div>
+                <div class="bar">
+                    <div class="process" id="process">
+                        <div class="bat" id="bat"></div>
+                        <a href="##"></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="playtime" id="playtime">00:00</p>
+                </div>
+                <div class="sound" id="sound"></div>
+            </div>
+            <div class="xia">
+                <div class="xia1"></div>
+                <p>免费下载这首歌</p>
+            </div>
+            <div class="dan">
+                <div class="xren"></div>
+                <div class="kuang">
+                    <div class="xxx">XXX————H5班</div>
+                    <div class="zui">
+                        <div class="ou"></div>
+                        <div class="ai">喜羊羊</div>
+                        <a href="##" class="qu">去现场></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ping"><!--评论-->
+        <div class="tou">
+            <div class="nei">
+                评论
+            </div>
+            <div class="nei1">
+                1703条评论
+            </div>
+        </div>
+        <hr>
+        <div class="lun">
+            <div class="ren">
+            </div>
+            <div class="write">
+                <div class="text">
+                    <textarea placeholder="分享你的音乐见解"  maxlength="100" cols="30" rows="10" class="write1" id="write" onkeyup="length(this);"></textarea>
+                </div>
+                <div class="ti">
+                    <div class="zi">
+                        <p id="zi">已输入0个字</p>
+                    </div>
+                    <button class="an" id="an" onclick="clearStorage('jingp');">评论</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jing"><!--精彩评论-->
+        <div class="jingzi">精彩评论</div>
+        <hr>
+        <div class="jingp" id="jingp"></div>
+        <div class="ye">
+            <div class="ye1"><a href="##">《</a></div>
+            <div class="ye2"><a href="##">1</a></div>
+            <div class="ye1"><a href="##">2</a></div>
+            <div class="ye1"><a href="##">3</a></div>
+            <div class="ye3"><a href="##">...</a></div>
+            <div class="ye1"><a href="##">17</a></div>
+            <div class="ye1"><a href="##">》</a></div>
+        </div>
+    </div>
+</body>
+<script>
+    var music = document.getElementById("music");
+    var process = document.getElementById("process");
+    var bat = document.getElementById("bat");
+    var playtime = document.getElementById("playtime")
+    var start = document.getElementById("play");
+    var lyric = document.getElementById("lyric");
+    var sound = document.getElementById("sound");
+    var zi = document.getElementById("zi");
+    var an = document.getElementById("an");
+    var jingp = document.getElementById("jingp");
+    // 进度条
+    function bar(){
+        var lenth = music.duration;
+        timer = setInterval(function(){
+            now = music.currentTime;
+            process.style.width = "" + parseFloat(now/lenth) * 300 + "px";
+            bat.style.left = "" + parseFloat(now/lenth) * 300 + "px";
+        }, 50);
+    }
+    // 时间
+    function time(){
+        mtime = setInterval(function(){
+            s = parseInt(music.currentTime);
+            var temp = s;
+            minute = parseInt(temp/60);
+            if(s%60 < 10){
+                playtime.innerHTML = "0" + minute + ":0" + s%60 + "";
+            }else{
+                playtime.innerHTML = "0" + minute + ":" + s%60 + "";
+            }
+        }, 1000);
+    }
+    // 播放暂停
+    start.onclick = function(){
+        if(start.className == "play"){
+            music.play();
+            start.className = "zan";
+            lyric.className = "lyric1";
+        }else{
+            music.pause();
+            start.className = "play";
+            lyric.className = "lyric";
+         }
+        bar();
+        time();
+    }
+    // 静音
+    sound.onclick = function(){
+        if(music.muted == true){
+            music.muted = false;
+        }else{
+            music.muted = true;
+        } 
+    }
+    // 输入字数
+    function length(obj){
+        var num = obj.value.length;
+        if(num <= 0){
+            num = 0;
+        }
+        zi.innerHTML = "已输入" + num + "个字";
+    }
+    // 存储评论
+    var m = 1;
+    an.onclick = function(){
+        var nei = document.getElementById("write").value;
+        var time = new Date();
+        var date = time.getFullYear()+ '-' + (time.getMonth() + 1)  + '-' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+        var obj = {
+            "neirong": nei,
+            "time": date
+        }
+        var objStr = JSON.stringify(obj);
+        localStorage['obj' + m] = objStr;
+        var zong = document.createElement("div");
+        zong.className = "zong";
+        jingp.appendChild(zong);
+        var ptou = document.createElement("div");
+        ptou.className = "ptou";
+        zong.appendChild(ptou);
+        var pi = document.createElement("div");
+        pi.className = "ju";
+        zong.appendChild(pi);
+        var ming = document.createElement("div");
+        ming.className = "ming";
+        pi.appendChild(ming);
+        var ming1 = document.createElement("div");
+        ming1.className = "ming1";
+        ming.appendChild(ming1);
+        var fen = document.createElement("div");
+        var a = document.createElement("a");
+        a.href = "##";
+        a.innerHTML = "分享";
+        a.className = "a";
+        fen.appendChild(a);
+        fen.className = "fen";
+        ming.appendChild(fen);
+        var pingn = document.createElement("div");
+        pingn.className = "pingn";
+        pi.appendChild(pingn);
+        var shi = document.createElement("div");
+        shi.className = "time";
+        pi.appendChild(shi);
+        ming1.innerHTML = m;
+        pingn.innerHTML = nei;
+        shi.innerHTML = date;
+        m = m + 1;
+    }
+</script>
+</html>
